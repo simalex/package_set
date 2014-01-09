@@ -1,0 +1,14 @@
+if package_enabled?('orogen')
+    
+    #default
+    #orogen_package 'limes/orogen/merge_component'    #example
+    #end default
+
+    in_flavor 'master', 'next' do
+    end
+
+    in_flavor 'master', 'next', 'stable' do
+    end
+else
+    Autoproj.warn "oroGen is not enabled, skipping the oroGen packages"
+end

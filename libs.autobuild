@@ -1,0 +1,42 @@
+#in diese datei kommen nur limes spazifische packete (keine orogen komponenten)
+#bitte an die struktur halten:
+# limes/eine_library_oder_programm
+#
+
+def learning_package(srcDir)
+    if Gem::Version.new(Autobuild::VERSION) <= Gem::Version.new('1.7.2')
+        learning_path="learning/behavior_learning/"
+        cmake_package srcDir do |pkg|
+            yield block if block_given?
+            pkg.srcdir = learning_path
+            pkg.post_import do
+                pkg.srcdir = srcDir
+                Autoproj.manifest.load_package_manifest(pkg.name)
+            end
+        end
+    else
+        cmake_package srcDir do |pkg|
+            pkg.importdir = "learning/behavior_learning/"
+        end
+    end
+end
+
+
+in_flavor 'master','next','stable' do
+    learning_package("learning/behavior_learning/interfaces/c++")
+    learning_package("learning/behavior_learning/controllers/bl_loader")
+    learning_package("learning/behavior_learning/controllers/c++/learning_controller")
+    learning_package("learning/behavior_learning/optimizer/c++/cmaes_optimizer")
+    learning_package("learning/behavior_learning/optimizer/c++/pso_optimizer")
+    learning_package("learning/behavior_learning/behavior_search/c++/c0n_behavior_search")
+    learning_package("learning/behavior_learning/environments/c++/simple_test_problem")
+    learning_package("learning/behavior_learning/environments/c++/mars_environment")
+    learning_package("learning/behavior_learning/environments/c++/locomotion_environment")
+    learning_package("learning/behavior_learning/tools/param_utils")
+end
+
+
+
+#Hier alle nur Master packete hin (default)
+#cmake_package 'limes/beispiel_library'
+

@@ -1,0 +1,15 @@
+name: learning.dfki
+
+# Use GITORIOUS_ROOT and GITORIOUS_PUSH_ROOT for the packages that are on
+# Gitorious
+#
+# Use SPACEGIT_ROOT and SPACEGIT_PUSH_ROOT for the packages that are on spacegit
+
+version_control:
+    - learning/behavior_learning/*:
+      type: git
+      url: $SPACEGIT_ROOT/team-learning/behavior_learning.git
+      push_to: $SPACEGIT_PUSH_ROOT/team-learning/behavior_learning.git
+      branch: $ROCK_FLAVOR
+
+
