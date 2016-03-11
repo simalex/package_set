@@ -9,5 +9,8 @@ version_control:
     - learning/.*:
         dfkigit: team-learning/bolero.git
         branch: master
+    - learning/boleroext.*:
+        dfkigit: team-learning/boleroext.git
+        branch: master
 
 

@@ -21,6 +21,24 @@ def learning_package(srcDir)
     end
 end
 
+def learning_ext_package(srcDir)
+    if Gem::Version.new(Autobuild::VERSION) <= Gem::Version.new('1.7.2')
+        learning_path="learning/boleroext/"
+        cmake_package srcDir do |pkg|
+            yield block if block_given?
+            pkg.srcdir = learning_path
+            pkg.post_import do
+                pkg.srcdir = srcDir
+                Autoproj.manifest.load_package_manifest(pkg.name)
+            end
+        end
+    else
+        cmake_package srcDir do |pkg|
+            pkg.importdir = "learning/boleroext/"
+        end
+    end
+end
+
 
 in_flavor 'master','next','stable' do
     learning_package("learning/bolero/include")
@@ -29,10 +47,11 @@ in_flavor 'master','next','stable' do
     learning_package("learning/bolero/src/optimizer/cmaes_optimizer")
     learning_package("learning/bolero/src/optimizer/pso_optimizer")
     learning_package("learning/bolero/src/behavior_search/bs_constant")
-    learning_package("learning/bolero/src/environments/cec13_test_functions")
-    learning_package("learning/bolero/src/environments/function_approximation")
-    learning_package("learning/bolero/src/environments/mars_environment")
-    learning_package("learning/bolero/src/environments/mountain_car")
+    learning_package("learning/bolero/src/environment/cec13_test_functions")
+    learning_package("learning/bolero/src/environment/function_approximation")
+    learning_package("learning/bolero/src/environment/mars_environment")
+    learning_package("learning/bolero/src/environment/mountain_car")
+    learning_ext_package("learning/boleroext/src/environment/locomotion_environment")
 end
 
 
