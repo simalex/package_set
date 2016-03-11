@@ -8,6 +8,6 @@ name: learning.dfki
 version_control:
     - learning/.*:
         dfkigit: team-learning/bolero.git
-        branch: $ROCK_FLAVOR
+        branch: master
 
 
