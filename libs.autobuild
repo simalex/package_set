@@ -52,6 +52,7 @@ in_flavor 'master','next','stable' do
     learning_package("learning/bolero/src/environment/mars_environment")
     learning_package("learning/bolero/src/environment/mountain_car")
     learning_ext_package("learning/boleroext/src/environment/locomotion_environment")
+    learning_ext_package("learning/boleroext/src/param_utils")
 end
 
 
