@@ -5,7 +5,7 @@
 
 def learning_package(srcDir)
     if Gem::Version.new(Autobuild::VERSION) <= Gem::Version.new('1.7.2')
-        learning_path="learning/behavior_learning/"
+        learning_path="learning/bolero/"
         cmake_package srcDir do |pkg|
             yield block if block_given?
             pkg.srcdir = learning_path
@@ -16,23 +16,23 @@ def learning_package(srcDir)
         end
     else
         cmake_package srcDir do |pkg|
-            pkg.importdir = "learning/behavior_learning/"
+            pkg.importdir = "learning/bolero/"
         end
     end
 end
 
 
 in_flavor 'master','next','stable' do
-    learning_package("learning/behavior_learning/interfaces/c++")
-    learning_package("learning/behavior_learning/controllers/bl_loader")
-    learning_package("learning/behavior_learning/controllers/c++/learning_controller")
-    learning_package("learning/behavior_learning/optimizer/c++/cmaes_optimizer")
-    learning_package("learning/behavior_learning/optimizer/c++/pso_optimizer")
-    learning_package("learning/behavior_learning/behavior_search/c++/c0n_behavior_search")
-    learning_package("learning/behavior_learning/environments/c++/simple_test_problem")
-    learning_package("learning/behavior_learning/environments/c++/mars_environment")
-    learning_package("learning/behavior_learning/environments/c++/locomotion_environment")
-    learning_package("learning/behavior_learning/tools/param_utils")
+    learning_package("learning/bolero/include")
+    learning_package("learning/bolero/src/bl_loader")
+    learning_package("learning/bolero/src/controller")
+    learning_package("learning/bolero/src/optimizer/cmaes_optimizer")
+    learning_package("learning/bolero/src/optimizer/pso_optimizer")
+    learning_package("learning/bolero/src/behavior_search/bs_constant")
+    learning_package("learning/bolero/src/environments/cec13_test_functions")
+    learning_package("learning/bolero/src/environments/function_approximation")
+    learning_package("learning/bolero/src/environments/mars_environment")
+    learning_package("learning/bolero/src/environments/mountain_car")
 end
 
 
