@@ -39,6 +39,24 @@ def learning_ext_package(srcDir)
     end
 end
 
+def benchmark_package(srcDir)
+    if Gem::Version.new(Autobuild::VERSION) <= Gem::Version.new('1.7.2')
+        learning_path="learning/benchmark_configurations/"
+        cmake_package srcDir do |pkg|
+            yield block if block_given?
+            pkg.srcdir = learning_path
+            pkg.post_import do
+                pkg.srcdir = srcDir
+                Autoproj.manifest.load_package_manifest(pkg.name)
+            end
+        end
+    else
+        cmake_package srcDir do |pkg|
+            pkg.importdir = "learning/benchmark_configurations/"
+        end
+    end
+end
+
 
 in_flavor 'master','next','stable' do
     learning_package("learning/bolero/include")
@@ -53,6 +71,7 @@ in_flavor 'master','next','stable' do
     learning_package("learning/bolero/src/environment/mountain_car")
     learning_ext_package("learning/boleroext/src/environment/locomotion_environment")
     learning_ext_package("learning/boleroext/src/param_utils")
+    benchmark_package("learning/benchmark_configurations/mantis_locomotion")
 end
 
 

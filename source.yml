@@ -12,5 +12,8 @@ version_control:
     - learning/boleroext.*:
         dfkigit: team-learning/boleroext.git
         branch: master
+    - learning/benchmark_configurations.*:
+        dfkigit: team-learning/benchmark_configurations.git
+        branch: master
 
 
