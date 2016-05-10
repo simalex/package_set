@@ -15,5 +15,8 @@ version_control:
     - learning/benchmark_configurations.*:
         dfkigit: team-learning/benchmark_configurations.git
         branch: master
+    - learning/distribute_bolero:
+        dfkigit: team-learning/distribute_bolero.git
+        branch: master
 
 

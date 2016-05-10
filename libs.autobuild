@@ -73,6 +73,7 @@ in_flavor 'master','next','stable' do
     learning_ext_package("learning/boleroext/src/param_utils")
     benchmark_package("learning/benchmark_configurations/mantis_locomotion")
     benchmark_package("learning/benchmark_configurations/charlie_sabre")
+    import_package("learning/distribute_bolero")
 end
 
 
