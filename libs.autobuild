@@ -70,9 +70,12 @@ in_flavor 'master','next','stable' do
     learning_package("learning/bolero/src/environment/mars_environment")
     learning_package("learning/bolero/src/environment/mountain_car")
     learning_ext_package("learning/boleroext/src/environment/locomotion_environment")
+    learning_ext_package("learning/boleroext/src/controller/adrf_controller")
+    learning_ext_package("learning/boleroext/src/controller/adrf_controller_client")
     learning_ext_package("learning/boleroext/src/param_utils")
     benchmark_package("learning/benchmark_configurations/mantis_locomotion")
     benchmark_package("learning/benchmark_configurations/charlie_sabre")
+    benchmark_package("learning/benchmark_configurations/cec13_test_functions")
     import_package("learning/distribute_bolero")
 end
 
