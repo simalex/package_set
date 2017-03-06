@@ -76,6 +76,7 @@ in_flavor 'master','next','stable' do
     benchmark_package("learning/benchmark_configurations/mantis_locomotion")
     benchmark_package("learning/benchmark_configurations/charlie_sabre")
     benchmark_package("learning/benchmark_configurations/cec13_test_functions")
+    benchmark_package("learning/benchmark_configurations/joint_pattern_approx")
     import_package("learning/distribute_bolero")
 end
 
