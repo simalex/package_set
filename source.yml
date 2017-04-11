@@ -3,7 +3,7 @@ name: learning.dfki
 imports:
     # includes helping libraries
     - github: rock-simulation/package_set
-    - github: rock-dfki/package_set
+    - dfkigit: rock-dfki/package_set
 
 version_control:
     - learning/.*:
