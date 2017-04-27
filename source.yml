@@ -3,7 +3,6 @@ name: learning.dfki
 imports:
     # includes helping libraries
     - github: rock-simulation/package_set
-    - dfkigit: rock-dfki/package_set
 
 version_control:
     - learning/.*:
@@ -18,5 +17,11 @@ version_control:
     - learning/distribute_bolero:
         dfkigit: team-learning/distribute_bolero.git
         branch: master
+    - tools/catch:
+      type: git
+      tag: v1.5.4
+      url: https://github.com/philsquared/Catch
+      patches:
+        - $AUTOPROJ_SOURCE_DIR/patches/catch.patch
 
 
