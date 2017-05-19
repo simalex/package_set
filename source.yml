@@ -8,6 +8,7 @@ version_control:
     - learning/.*:
         github: team-learning/bolero.git
         branch: master
+        url: https://github.com/rock-learning/bolero.git
     - learning/boleroext.*:
         dfkigit: team-learning/boleroext.git
         branch: master
