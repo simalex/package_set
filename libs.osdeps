@@ -10,6 +10,9 @@ python-scipy:
 python-matplotlib:
     debian, ubuntu: [python-matplotlib]
 
+python-sklearn:
+    debian, ubuntu: [python-sklearn]
+
 python-nose:
     debian, ubuntu: [python-nose]
 
