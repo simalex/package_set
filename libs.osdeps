@@ -1,0 +1,20 @@
+python:
+    debian, ubuntu: [python]
+
+python-numpy:
+    debian, ubuntu: [python-numpy]
+
+python-scipy:
+    debian, ubuntu: [python-scipy]
+
+python-matplotlib:
+    debian, ubuntu: [python-matplotlib]
+
+python-nose:
+    debian, ubuntu: [python-nose]
+
+python-dev:
+    debian, ubuntu: [python-dev]
+
+cython:
+    debian, ubuntu: [cython]
