@@ -22,6 +22,7 @@ def learning_package(srcDir)
 end
 
 in_flavor 'master','next','stable' do
+    cmake_package "learning/bolero/bolero/wrapper"
     learning_package("learning/bolero/include")
     learning_package("learning/bolero/src/bl_loader")
     learning_package("learning/bolero/src/controller")
@@ -37,4 +38,3 @@ end
 
 #Hier alle nur Master packete hin (default)
 #cmake_package 'limes/beispiel_library'
-
