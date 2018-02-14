@@ -17,8 +17,8 @@ def learning_package(srcDir)
 end
 
 in_flavor 'master','next','stable' do
-    cmake_package "tools/catch"
-    cmake_package "learning/bolero/bolero/wrapper"
+    cmake_package("tools/catch")
+    learning_package("learning/bolero/bolero/wrapper")
     learning_package("learning/bolero/include")
     learning_package("learning/bolero/src/bl_loader")
     learning_package("learning/bolero/src/controller")
