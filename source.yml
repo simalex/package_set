@@ -10,6 +10,5 @@ version_control:
         branch: master
     - tools/catch:
       type: git
-      tag: v1.5.4
       url: https://github.com/philsquared/Catch
 
