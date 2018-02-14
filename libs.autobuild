@@ -1,8 +1,3 @@
-#in diese datei kommen nur limes spazifische packete (keine orogen komponenten)
-#bitte an die struktur halten:
-# limes/eine_library_oder_programm
-#
-
 def learning_package(srcDir)
     if Gem::Version.new(Autobuild::VERSION) <= Gem::Version.new('1.7.2')
         learning_path="learning/bolero/"
@@ -22,6 +17,7 @@ def learning_package(srcDir)
 end
 
 in_flavor 'master','next','stable' do
+    cmake_package "tools/catch"
     cmake_package "learning/bolero/bolero/wrapper"
     learning_package("learning/bolero/include")
     learning_package("learning/bolero/src/bl_loader")
@@ -33,8 +29,3 @@ in_flavor 'master','next','stable' do
     learning_package("learning/bolero/src/environment/mars_environment")
     learning_package("learning/bolero/src/environment/mountain_car")
 end
-
-
-
-#Hier alle nur Master packete hin (default)
-#cmake_package 'limes/beispiel_library'

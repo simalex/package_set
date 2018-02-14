@@ -12,7 +12,4 @@ version_control:
       type: git
       tag: v1.5.4
       url: https://github.com/philsquared/Catch
-      patches:
-        - $AUTOPROJ_SOURCE_DIR/patches/catch.patch
-
 
