@@ -28,4 +28,6 @@ in_flavor 'master','next','stable' do
     learning_package("learning/bolero/src/environment/function_approximation")
     learning_package("learning/bolero/src/environment/mars_environment")
     learning_package("learning/bolero/src/environment/mountain_car")
+    learning_package("learning/bolero/src/representation/dmp")
+    learning_package("learning/bolero")
 end
