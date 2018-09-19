@@ -18,6 +18,7 @@ end
 
 in_flavor 'master','next','stable' do
     cmake_package("tools/catch")
+    learning_package("learning/bolero/src/representation/promp")
     learning_package("learning/bolero/bolero/wrapper")
     learning_package("learning/bolero/include")
     learning_package("learning/bolero/src/bl_loader")
