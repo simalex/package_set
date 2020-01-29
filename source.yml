@@ -6,9 +6,9 @@ imports:
 
 version_control:
     - learning/.*:
-        github: rock-learning/bolero.git
+        github: simalex/bolero.git
         interactive: true    # forces single checkout even if autoprojs's parallel checkout is used
-        branch: master
+        branch: distribution
     - tools/catch:
       type: git
       url: https://github.com/philsquared/Catch
